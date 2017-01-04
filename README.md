@@ -17,7 +17,7 @@ npm run build
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Development Flow
+## Development Workflow
 
 - Please create a new branch to work on a task `git checkout -b
   <yourname-task-name>`

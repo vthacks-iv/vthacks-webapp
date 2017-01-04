@@ -17,12 +17,37 @@ npm run build
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
+## Development Flow
+
+- Please create a new branch to work on a task `git checkout -b
+  <yourname-task-name>`
+
+- When you are done, please create a clean pull-request.
+
+- It is up to you if you want to fork the repo and push to your own forked repo
+  or just push to this repo.
+
+- Please use 4 spaces and if possible use ESLINTER.
+
+## Tools being used for development
+
+- We are using VueJS framework with Firebase if you are new to one of them
+  please read documentation:
+    * [Vue.JS guide](https://vuejs.org/v2/guide/)
+    * [Firebase guide](https://firebase.google.com/docs/)
+
+- For the UI components, we are using a mix of Google Material and Bootstrap v4.
+    * [Vuetify](https://vuetifyjs.com/)
+
+- If any questions arises, please don't hesitate to create Github issue. Pinging
+  one of us on the Vthacks-dev FB groupchat is a good way to let us know about
+  the issue you created.
 
 
-#List of features for VTHacks app
+# List of features for VTHacks app
 =================================
 
-Web App, iOS App and Android app
+### Web App, iOS App and Android app
 --------------------------------
 1. Landing
 2. Registration
@@ -40,7 +65,7 @@ Web App, iOS App and Android app
 ___Maybe we can have 4 and 5 as just one view.___
 
 
-API
+### API (no more API, but rather just Firebase)
 ---
 1. User
   * Have ability to POST, GET, PATCH, DELETE its own content

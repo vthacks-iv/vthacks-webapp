@@ -1,6 +1,6 @@
 <template>
     <v-navbar class="green">
-        <v-navbar-logo>Navbar</v-navbar-logo>
+        <v-navbar-logo>VTHacks</v-navbar-logo>
         <v-spacer class="hidden-sm-and-down"></v-spacer>
         <v-navbar-item v-for="item in items" :item="item" :router="item.router"></v-navbar-item>
     </v-navbar>

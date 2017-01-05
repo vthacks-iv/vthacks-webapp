@@ -15,9 +15,7 @@
 </template>
 
 <script>
-    // import Home from './components/Home'
     import Nav from './components/Nav'
-    // import Payment from './components/Payment.vue'
 
     export default {
         name: 'app',
@@ -32,15 +30,20 @@
 </script>
 
 <style lang="scss">
-    @import '../node_modules/material-design-icons/iconfont/material-icons.css';
+    @import '../node_modules/material-design-icons/iconfont/material-icons.css'; // Might delete later if we don't use it for anything
     @import '../node_modules/vuetify/dist/vuetify.min.css';
     @import '../node_modules/sanitize.css/sanitize.css';
 
     #app {
-        font-family: 'Roboto', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+    }
+    header {
+        font-family: 'Roboto', sans-serif;
+    }
+    main {
+        font-family: 'Open Sans', sans-serif;
     }
 </style>

@@ -1,15 +1,17 @@
 <template>
-    <v-app class="teal lighten-4" >
+    <v-app top-navbar footer class="teal lighten-4" >
         <header>
             <app-nav></app-nav>
         </header>
         <main>
-        <v-content>
-            <transition name="slide" mode="out-in">
+            <v-content>
+                <transition name="slide" mode="out-in">
                 <router-view></router-view>
-            </transition>
-        </v-content>
+                </transition>
+            </v-content>
         </main>
+        <v-footer>
+        </v-footer>
     </v-app>
 </template>
 

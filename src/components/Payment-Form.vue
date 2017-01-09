@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="payment-form">
         <v-row>
             <v-col xs12 sm12 md12 offset-lg4 lg4>
                 <form>

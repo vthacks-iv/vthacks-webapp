@@ -1,7 +1,8 @@
 <template>
-    <v-container>
+    <v-container class="register">
         <v-row>
             <v-col xs12 sm12 md12 offset-lg4 lg4>
+                <app-logo></app-logo>
                 <form>
                     <v-text-input
                         name="name"
@@ -52,6 +53,8 @@
 </template>
 
 <script>
+    import Logo from '../components/Logo'
+
     export default {
         name: 'register',
         data () {
@@ -70,10 +73,15 @@
             register () {
                 console.log(this.userModel)
             }
+        },
+        components: {
+            appLogo: Logo
         }
-
     }
 </script>
 
 <style lang="scss" scoped>
+    .register {
+        height: calc(100vh - 4em);
+    }
 </style>

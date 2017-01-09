@@ -3,14 +3,13 @@
         <v-row>
             <v-col xs12 sm12 md12 lg12>
                 <v-row>
-                    <v-col lg2>
+                    <v-col xs-2 sm2 md2 lg2>
                     </v-col>
-                    <v-col text-lg-center lg8>
+                    <v-col text-lg-center xs8 sm8 md8 lg8>
                         <app-logo></app-logo>
                         <h1>{{ msg }} is under construction.</h1>
                     </v-col>
-                    <v-col class="landing-background-img" lg2>
-                        <img src="../../src/assets/title-card-seaweed-right.png">
+                    <v-col class="landing-background-img" xs2 sm2 md2 lg2>
                     </v-col>
                 </v-row>
             </v-col>
@@ -54,5 +53,8 @@
 
     a {
         color: #42b983;
+    }
+    .home {
+        text-align: center;
     }
 </style>

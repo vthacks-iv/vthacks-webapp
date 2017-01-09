@@ -1,22 +1,54 @@
 <template>
-    <div>
-        <h1>{{ title }}</h1>
-        <label for="username">Username</label>
-        <input id="username" type="text" v-model="userModel.username">
-        <label for="password">Password</label>
-        <input id="password" type="password" v-model="userModel.password">
-        <label for="repassword">Confirm Password</label>
-        <input id="password" type="password">
-        <label for="email">Email</label>
-        <input id="email" type="email" v-model="userModel.email">
-        <label for="school">School</label>
-        <input id="school" type="text" v-model="userModel.school">
-        <label for="gender">Gender</label>
-        <input id="gender" type="text" v-model="userModel.gender">
-
-        <p id="name">{{ paymentData.name }}</p>
-        <button action="submit">Submit</button>
-    </div>
+    <v-container>
+        <v-row>
+            <v-col xs12 sm12 md12 offset-lg4 lg4>
+                <form>
+                    <v-text-input
+                        name="name"
+                        id="name"
+                        label="Full Name"
+                        v-model="userModel.name">
+                    </v-text-input>
+                    <v-text-input
+                        id="password" 
+                        name="password"
+                        type="password"
+                        label="Password"
+                        v-model="userModel.password">
+                    </v-text-input>
+                    <v-text-input
+                        id="password"
+                        name="repassword"
+                        type="password"
+                        label="Confirm Password">
+                    </v-text-input>
+                    <v-text-input
+                        id="email"
+                        name="email"
+                        type="email"
+                        label="Email"
+                        v-model="userModel.email">
+                    </v-text-input>
+                    <v-text-input
+                        id="school"
+                        name="school"
+                        label="School"
+                        v-model="userModel.school">
+                    </v-text-input>
+                    <v-text-input
+                        id="gender"
+                        name="gender"
+                        label="Gender"
+                        v-model="userModel.gender">
+                    </v-text-input>
+                    <div>
+                        &nbsp
+                    </div>
+                    <v-btn type="submit" @click.native.prevent="register" round>Submit</v-btn>
+                </form>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script>
@@ -26,16 +58,22 @@
             return {
                 title: 'Register',
                 userModel: {
-                    username: '',
+                    name: '',
                     password: '',
                     email: '',
                     school: '',
                     gender: ''
                 }
             }
+        },
+        methods: {
+            register () {
+                console.log(this.userModel)
+            }
         }
+
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

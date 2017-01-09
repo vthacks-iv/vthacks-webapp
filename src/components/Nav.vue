@@ -1,6 +1,6 @@
 <template>
-    <v-navbar class="green">
-        <v-navbar-logo>VTHacks</v-navbar-logo>
+    <v-navbar class="white">
+        <v-navbar-logo>VTHACKS</v-navbar-logo>
         <v-spacer class="hidden-sm-and-down"></v-spacer>
         <v-navbar-item v-for="item in items" :item="item" :router="item.router"></v-navbar-item>
     </v-navbar>
@@ -13,8 +13,8 @@
             return {
                 items: [
                     { text: 'Home', href: '/', router: true },
-                    // { text: 'Register', href: '/register', router: true },
-                    { text: 'Payment', href: '/payment', router: true }
+                    { text: 'Register', href: '/register', router: true },
+                    { text: 'Sponsors', href: '/sponsors', router: true }
                 ]
             }
         }
@@ -23,10 +23,24 @@
 
 <style lang="scss">
     .navbar__group-header, .navbar__item--active {
-        background: hsla(0,0%,100%,.2);
+        background: hsl(175, 41%, 79%);
+        box-shadow: 0px -4px 0px #0097A7 inset;
+        color: rgba(225, 225, 225, 1);
+    }
+    .navbar__group-header:hover, .navbar__item:hover {
+        background: hsla(181, 31%, 57%, 0.2);
     }
     li.navbar__item>a {
         text-decoration: none;
-        color: white;
+        color: rgb(3, 115, 91);
+    }
+    .navbar__logo {
+        color: rgb(3, 115, 91);
+    }
+    .navbar__logo, .navbar__side-icon a i {
+        font-size: 2.5rem;
+    }
+    .navbar {
+        height: 4rem;
     }
 </style>

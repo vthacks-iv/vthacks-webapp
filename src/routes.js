@@ -1,6 +1,10 @@
-import Home from './components/Home.vue'
-import Payment from './components/Payment.vue'
-import Register from './components/Register.vue'
+import Home from './components/Home'
+import Confirmation from './components/Confirmation'
+import Payment from './components/Payment'
+import PaymentForm from './components/Payment-Form'
+import Register from './components/Register'
+import Sponsors from './components/Sponsors'
+import SponsorsInfo from './components/Sponsors-Info'
 
 export const routes = [
     {
@@ -8,13 +12,34 @@ export const routes = [
         component: Home,
         name: 'home'
     }, {
-        path: '/payment',
-        component: Payment,
-        name: 'payment'
-    }, {
         path: '/register',
         component: Register,
         name: 'register'
+    }, {
+        path: '/sponsors',
+        component: Sponsors, // change this
+        children: [
+            {
+                path: '',
+                component: SponsorsInfo,
+                name: 'sponsors-info'
+            }, {
+                path: 'payment',
+                component: Payment,
+                children: [
+                    {
+                        path: '',
+                        component: PaymentForm,
+                        name: 'payment-form'
+                    }, {
+                        path: 'confirmation',
+                        component: Confirmation,
+                        name: 'payment-confirmation'
+                    }
+                ]
+            }
+        ]
+    }
 //     }, {
 //         path: '/resumes',
 //         component: Resumes,
@@ -23,9 +48,4 @@ export const routes = [
 //         path: '/alumni',
 //         component: Alumni,
 //         name: 'alumni'
-//     }, {
-//         path: '/sponsors',
-//         component: Component,
-//         name: 'sponsors'
-    }
 ]

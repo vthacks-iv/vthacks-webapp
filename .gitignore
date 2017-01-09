@@ -3,3 +3,5 @@ node_modules/
 dist/
 npm-debug.log
 !node_modules/vuetify/
+.*.sw*
+config/stripe.json

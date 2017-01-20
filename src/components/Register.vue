@@ -1,8 +1,10 @@
 <template>
     <v-container class="register">
         <v-row>
-            <v-col xs12 sm12 md12 offset-lg4 lg4>
+            <v-col mt-5 xs12 sm12 md12 lg12>
                 <app-logo></app-logo>
+            </v-col>
+            <v-col xs12 sm12 md12 offset-lg4 lg4>
                 <form>
                     <v-text-input
                         name="name"
@@ -45,7 +47,7 @@
                     <div>
                         &nbsp
                     </div>
-                    <v-btn type="submit" @click.native.prevent="register" round>Submit</v-btn>
+                    <v-btn class="vt-submit-btn" :ripple="{class: 'teal--text'}" type="submit" @click.native.prevent="register" round>Submit</v-btn>
                 </form>
             </v-col>
         </v-row>

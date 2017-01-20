@@ -38,8 +38,7 @@
     "type": "range"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/vuetify/-/vuetify-0.8.5.tgz",
   "_shasum": "8291e476602548a7106b6341bf6312fe8e7e2420",

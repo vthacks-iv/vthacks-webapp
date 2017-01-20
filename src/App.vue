@@ -1,16 +1,18 @@
 <template>
-    <v-app top-navbar footer class="teal lighten-4" >
+    <v-app top-fixed-navbar footer left-fixed-sidebar class="teal lighten-4" >
         <header>
             <app-nav></app-nav>
         </header>
-        <main>
+        <main class="clearfix">
+        <v-sidebar drawer id="mainsidebar"></v-sidebar>
             <v-content>
                 <transition name="slide" mode="out-in">
-                <router-view></router-view>
+                    <router-view></router-view>
                 </transition>
             </v-content>
         </main>
         <v-footer>
+            <div> </> with zZz</div>
         </v-footer>
     </v-app>
 </template>
@@ -37,7 +39,7 @@
     #app {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: black;
+        color: #000000;
     }
     header {
         font-family: 'Roboto', sans-serif;
@@ -58,7 +60,7 @@
         transition: all .2s ease;
         transform: translateX(3rem);
     }
-    .input-group>label {
+    .input-group label {
         color: black;
     }
     .input-group:after {
@@ -71,6 +73,56 @@
         text-align: center;
     }
     .modal {
-        border-radius: 2em !important;
+        border-radius: 0.5vh !important;
+    }
+    .with.top-navbar main>.content {
+        height: calc(100vh - 7.2em);
+        min-height: 28em;
+        padding-top: 0rem;
+    }
+    .footer {
+        background: #12515c;
+    }
+    .footer div {
+        text-align: center;
+        font-weight: 500;
+    }
+    .vt-submit-btn {
+        border-radius: 0.5vh;
+        color: #328782;
+        background: #ffffff;
+        font-weight: 300;
+    }
+    @media (min-width: 0px) and (max-width: 740px) {
+        .vt-submit-btn {
+            padding: 0.5vh 1.5vw;
+            font-size: 1.4rem;
+        }
+    }
+    @media screen and (min-width: 767px) {
+        .hidden-sm-and-up {
+            display: none!important;
+        }
+    }
+
+    /*
+     * Clearfix: contain floats
+     *
+     * For modern browsers
+     * 1. The space content is one way to avoid an Opera bug when the
+     *    `contenteditable` attribute is included anywhere else in the document.
+     *    Otherwise it causes space to appear at the top and bottom of elements
+     *    that receive the `clearfix` class.
+     * 2. The use of `table` rather than `block` is only necessary if using
+     *    `:before` to contain the top-margins of child elements.
+     */
+
+    .clearfix:before, .clearfix:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+
+    .clearfix:after {
+        clear: both;
     }
 </style>

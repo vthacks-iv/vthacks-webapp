@@ -14,15 +14,20 @@
 
 <style scoped>
     .container {
-        width: 25em;
-        margin: 3em auto;
+        width: 20vh; // 25em
+        margin: 2em auto;
+        margin-bottom: 0;
     }
 
     .logo {
         animation: bounceIn 2s cubic-bezier(0.8, 1, 1, 1);
         transform-origin: center;
     }
-
+    @media (width: 320px) {
+        .container {
+            width: 20em;
+        }
+    }
     @keyframes bounceIn {
         0% {
             opacity: 1;
@@ -45,4 +50,3 @@
         }
     }
 </style>
-

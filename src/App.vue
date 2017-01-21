@@ -1,5 +1,5 @@
 <template>
-    <v-app top-fixed-navbar footer left-fixed-sidebar class="teal lighten-4" >
+    <v-app top-navbar footer left-fixed-sidebar class="teal lighten-4" >
         <header>
             <app-nav></app-nav>
         </header>
@@ -74,6 +74,10 @@
     }
     .modal {
         border-radius: 0.5vh !important;
+    }
+    .with.left-fixed-sidebar .navbar, .with.left-fixed-sidebar footer,
+    .with.left-fixed-sidebar main {
+        padding-left: 0;
     }
     .with.top-navbar main>.content {
         height: calc(100vh - 7.2em);

@@ -61,14 +61,9 @@
     a {
         color: #42b983;
     }
-    .home {
-    }
     .home-content {
         text-align: center;
-        // margin: 16vh 0 0 0;
-        padding: 10vh; //FIXTHIS
-        width: 100vh;
-        height: calc(100vh - 7.2em);
+        padding: 10vh;
     }
     @media screen and (max-width: 576px) {
         .home-content {
@@ -77,12 +72,10 @@
         }
     }
     .seaweed-right {
-        width: 35vh;
+        width: 30vh;
         float: right;
     }
     .seaweed-left {
-        // width: 350px;
-        // float: left;
     }
     img.right-seaweed {
         position: fixed;
@@ -94,7 +87,7 @@
         height: 100vh;
         width: 30vh;
     }
-    @media screen and (max-width: 1060px) {
+    @media screen and (max-width: 1180px) {
         .main-title {
             font-size: 8rem;
         }

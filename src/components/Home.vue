@@ -17,7 +17,9 @@
                     <div id="vthacksDate">
                         February 12th, 2017
                     </div>
-                    <v-btn :ripple="{class: 'teal--text'}" class="vt-submit-btn" round>Register</v-btn>
+                    <router-link style='text-decoration: none' to='/register'>
+                        <v-btn :ripple="{class: 'teal--text'}" class="vt-submit-btn" round>Register</v-btn>
+                    </router-link>
                 </v-col>
             </v-row>
         </v-container>
@@ -102,7 +104,6 @@
             font-size: 10rem;
         }
         .home-content {
-            margin: 12vh 0 0 0;
         }
         #vthacksTitle {
             margin: 0;

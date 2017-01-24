@@ -1,8 +1,8 @@
 <template>
     <v-container class="sponsor-info">
+        <app-logo></app-logo>
         <v-row>
             <v-col mt-5 xs12 sm12 md12 offset-lg4 lg4>
-                <app-logo></app-logo>
                 <h1>Sponsors</h1>
                 <router-view></router-view>
                 <v-btn v-modal:modal class="teal darken-1 white--text">
@@ -128,7 +128,7 @@
     }
     .sponsor-info {
         text-align: center;
-        height: calc(100vh - 4em);
+        padding-top: 10px;
     }
 </style>
 

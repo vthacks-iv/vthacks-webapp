@@ -1,7 +1,9 @@
 import Home from './components/Home'
 import Confirmation from './components/Confirmation'
+import Login from './components/Login'
 import Payment from './components/Payment'
 import PaymentForm from './components/Payment-Form'
+import Profile from './components/Profile'
 import Register from './components/Register'
 import Sponsors from './components/Sponsors'
 import SponsorsInfo from './components/Sponsors-Info'
@@ -11,6 +13,14 @@ export const routes = [
         path: '/',
         component: Home,
         name: 'home'
+    }, {
+        path: '/login',
+        component: Login,
+        name: 'login'
+    }, {
+        path: '/profile/:authId',
+        component: Profile,
+        name: 'profile'
     }, {
         path: '/register',
         component: Register,

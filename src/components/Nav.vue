@@ -7,6 +7,8 @@
         <v-spacer class="hidden-sm-and-down"></v-spacer>
         <v-navbar-items class="hidden-sm-and-down group-class">
             <v-navbar-item v-for="item in items" :item="item"></v-navbar-item>
+            <v-btn v-dropdown:dropdown class="primary white--text">UserName</v-btn>
+            <v-dropdown id="dropdown" v-bind:items="userDropdown"></v-dropdown>
         </v-navbar-items>
     </v-navbar>
 </template>
@@ -18,8 +20,12 @@
             return {
                 items: [
                     { text: 'Home', href: '/', router: true },
-                    { text: 'Register', href: '/register', router: true },
-                    { text: 'Sponsors', href: '/sponsors', router: true }
+                    { text: 'Sponsors', href: '/sponsors', router: true },
+                    { text: 'Login/Register', href: '/register', router: true }
+                ],
+                userDropdown: [
+                    { text: 'Profile', href: '/profile/1', router: true },
+                    { text: 'Logout', href: '/logout', router: true }
                 ]
             }
         }
@@ -42,6 +48,7 @@
     .navbar__logo {
         color: rgb(3, 115, 91);
         font-weight: 300;
+        padding: 0;
     }
     .navbar {
         height: 4rem;
@@ -54,7 +61,8 @@
         font-size: 3rem;
         font-weight: 300;
     }
-    .navbar__side-icon a {
+    .navbar__side-icon {
+        margin: 0 0 0 14px;
         color: teal;
     }
     @media screen and (max-width: 980px) {

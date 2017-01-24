@@ -47,6 +47,9 @@
     main {
         font-family: 'Open Sans', sans-serif;
     }
+    .content { 
+        overflow-y: scroll;
+    }
     .slide-enter-active {
         transition: all .3s ease;
     }
@@ -69,13 +72,11 @@
     button[type="submit"] {
         background: white;
     }
-    form {
-        text-align: center;
-    }
     .modal {
         border-radius: 0.5vh !important;
     }
-    .with.left-fixed-sidebar .navbar, .with.left-fixed-sidebar footer,
+    .with.left-fixed-sidebar header .navbar,
+    .with.left-fixed-sidebar footer,
     .with.left-fixed-sidebar main {
         padding-left: 0;
     }

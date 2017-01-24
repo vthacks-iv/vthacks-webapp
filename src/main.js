@@ -6,12 +6,14 @@ import Vuetify from 'vuetify'
 import VueResource from 'vue-resource'
 import App from './App'
 import { routes } from './routes.js'
+import VueFire from 'vuefire'
 
 /* eslint-disable no-new */
 
 Vue.use(VueRouter)
 Vue.use(Vuetify)
 Vue.use(VueResource)
+Vue.use(VueFire)
 
 Vue.http.options.root = 'https://vthacks.webscript.io/'
 Vue.http.headers.common['Content-Type'] = 'application/json'

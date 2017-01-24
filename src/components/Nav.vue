@@ -7,7 +7,7 @@
         <v-spacer class="hidden-sm-and-down"></v-spacer>
         <v-navbar-items class="hidden-sm-and-down group-class">
             <v-navbar-item v-for="item in items" :item="item"></v-navbar-item>
-            <v-btn v-dropdown:dropdown class="primary white--text">UserName</v-btn>
+            <v-navbar-item id='profileNav' :item="{ text: 'Username' }" v-dropdown:dropdown></v-navbar-item>
             <v-dropdown id="dropdown" v-bind:items="userDropdown"></v-dropdown>
         </v-navbar-items>
     </v-navbar>
@@ -18,6 +18,7 @@
         name: 'nav',
         data () {
             return {
+                usernav: false,
                 items: [
                     { text: 'Home', href: '/', router: true },
                     { text: 'Sponsors', href: '/sponsors', router: true },
@@ -80,5 +81,8 @@
         .navbar__title {
             font-size: 6vw;
         }
+    }
+    #profileNav {
+        cursor: pointer;
     }
 </style>

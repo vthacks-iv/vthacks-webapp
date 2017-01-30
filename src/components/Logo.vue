@@ -16,6 +16,7 @@
     .logo-container {
         width: 30vh;
         margin: 2em auto;
+        margin-bottom: 1em;
     }
 
     .logo {

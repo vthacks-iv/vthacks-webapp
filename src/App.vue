@@ -4,7 +4,7 @@
             <app-nav></app-nav>
         </header>
         <main class="clearfix">
-        <v-sidebar drawer id="mainsidebar"></v-sidebar>
+        <v-sidebar  drawer :items="itemsGroup" id="mainsidebar"></v-sidebar>
             <v-content>
                 <transition name="slide" mode="out-in">
                     <router-view></router-view>
@@ -19,14 +19,44 @@
 
 <script>
     import Nav from './components/Nav'
+    import { firebaseAuth, database } from './firebase_config'
 
     export default {
         name: 'app',
+        data () {
+            return {
+                itemsGroup: [
+                    { header: 'VTHacks' },
+                    { title: 'Home', href: '/', router: true },
+                    { title: 'Sponsors', href: '/sponsors', router: true },
+                    { title: 'Login/Register', href: '/login', router: true }
+                ]
+            }
+        },
         components: {
             appNav: Nav
         },
         mounted () {
             this.$vuetify.init()
+        },
+        created () {
+            firebaseAuth.onAuthStateChanged(user => {
+                if (user) {
+                    this.userInfo = true
+                    database
+                        .ref('users')
+                        .child(user.uid)
+                        .once('value')
+                        .then(snapshot => {
+                            const dbUser = snapshot.val()
+                            dbUser.uid = user.uid
+                            this.$store.dispatch('setUser', dbUser)
+                        })
+                }
+            },
+            (err) => {
+                console.log(err)
+            })
         }
     }
 </script>
@@ -74,6 +104,7 @@
     }
     .modal {
         border-radius: 0.5vh !important;
+        box-shadow: 0 0px 0px 0 rgba(0,0,0,.24), 0 0px 0px 0 rgba(0,0,0,.19);
     }
     .with.left-fixed-sidebar header .navbar,
     .with.left-fixed-sidebar footer,
@@ -108,6 +139,9 @@
         .hidden-sm-and-up {
             display: none!important;
         }
+    }
+    .sidebar--open {
+        width: 200px;
     }
 
     /*

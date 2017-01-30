@@ -3,7 +3,7 @@
         <app-logo></app-logo>
         <v-row>
             <v-col xs12 offset-sm2 sm8 offset-md3 md6 offset-lg4 lg4>
-                {title}
+                {{ title }}
                 <form>
                     <v-text-input
                         id="email"
@@ -22,16 +22,24 @@
                     <div>
                         &nbsp
                     </div>
-                    <div id="loginBtn">
-                        <v-btn class="vt-submit-btn" 
-                            :ripple="{class: 'teal--text'}"
-                            type="submit"
-                            @click.native.prevent="login"
-                            round>
-                            Login
-                        </v-btn>
+                    <div class="text-xs-center text-md-center">
+                        <div id="loginBtn">
+                            <v-btn class="vt-submit-btn" 
+                                :ripple="{class: 'teal--text'}"
+                                type="submit"
+                                @click.native.prevent="login"
+                                round>
+                                Login
+                            </v-btn>
+                        </div>
+                        <router-link style='text-decoration: none' to='/register'>
+                            <v-btn
+                                :ripple="{class: 'teal--text'}"
+                                class="vt-submit-btn" round>
+                                Register
+                            </v-btn>
+                        </router-link>
                     </div>
-                    <router-link to:'/register'>Register</router-link>
                 </form>
             </v-col>
         </v-row>
@@ -40,6 +48,7 @@
 
 <script>
     import Logo from '../components/Logo'
+//    import { firebaseAuth, database } from '../firebase_config'
 
     export default {
         name: 'login',
@@ -54,7 +63,10 @@
         },
         methods: {
             login () {
-                console.log(this.userModel)
+                this.$store.dispatch('logIn', {
+                    email: this.userModel.email,
+                    password: this.userModel.password
+                })
             }
         },
         components: {
@@ -64,5 +76,8 @@
 </script>
 
 <style scoped>
+    #loginBtn {
+        display: inline-block;
+    }
 </style>
 

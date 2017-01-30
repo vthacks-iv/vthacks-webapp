@@ -1,18 +1,21 @@
 import firebase from 'firebase'
-import config from 'config'
 
-firebase.initializeApp({
-    apiKey: config.firebase.apiKey,
-    authDomain: config.firebase.authDomain,
-    databaseURL: config.firebase.databaseURL,
-    storageBucket: config.firebase.storageBucket,
-    messagingSenderId: config.firebase.messagingSenderId
-})
+const firebaseConfig = {
+    apiKey: 'GO TO FIREBASE',
+    authDomain: 'GO TO FIREBASE',
+    databaseURL: 'GO TO FIREBASE',
+    storageBucket: 'GO TO FIREBASE',
+    messagingSenderId: 'GO TO FIREBASE'
+}
 
-const database = firebase.database()
-const firebaseAuth = firebase.auth()
+const fire = firebase.initializeApp(firebaseConfig)
+
+const database = fire.database()
+const firebaseAuth = fire.auth()
+const storage = fire.storage().ref()
 
 export {
     database,
-    firebaseAuth
+    firebaseAuth,
+    storage
 }

@@ -1,81 +1,25 @@
 <template>
-    <v-container class="sponsor-info">
-        <v-row>
-            <v-col mt-5 xs12 sm12 md12 offset-lg4 lg4>
-                <app-logo></app-logo>
-                <h1>Sponsors</h1>
-                <router-view></router-view>
-                <v-btn v-modal:modal class="teal darken-1 white--text">
-                    Payment
-                </v-btn>
-                <v-modal id="modal">
-                    <v-card>
-                        <form class="payment">
-                            <v-card-text>
-                                <h1>VTHacks - Sponsorship Payment</h1>
-                                <v-text-input
-                                    name="company"
-                                    id="company"
-                                    label="Company"
-                                    v-model="paymentData.company">
-                                </v-text-input>
-                                <v-text-input
-                                    name="email"
-                                    id="email"
-                                    label="Payer's Email"
-                                    v-model="paymentData.email">
-                                </v-text-input>
-                                <v-text-input
-                                    name="card-number"
-                                    id="cardNumber"
-                                    label="Card Number"
-                                    v-model="paymentData.cardNumber">
-                                </v-text-input>
-                                <v-text-input
-                                    name="card-exp"
-                                    id="cardExp"
-                                    label="Expiration Date (MM/YY)"
-                                    v-model="paymentData.cardExp">
-                                </v-text-input>
-                                <v-text-input
-                                    name="card-code"
-                                    id="cardCode"
-                                    label="CVC"
-                                    v-model="paymentData.cardCode">
-                                </v-text-input>
-                                <v-text-input
-                                    name="amount"
-                                    id="amount"
-                                    label="Amount"
-                                    v-model.number="paymentData.amount">
-                                </v-text-input>
-                                <v-text-input
-                                    name="paymentFor"
-                                    id="paymentFor"
-                                    label="Payment For"
-                                    v-model.number="paymentData.paymentFor">
-                                </v-text-input>
-                            </v-card-text>
-                            <v-card-row actions>
-                                <v-btn v-on:click.native="modal('modal')">
-                                    Cancel
-                                </v-btn>
-                                <v-spacer>
-                                <v-btn v-on:click.native="modal('modal')" class="teal darken-1 white--text">
-                                    Submit
-                                </v-btn>
-                            </v-card-row>
-                        </form>
-                    </v-card>
-                </v-modal>
-            </v-col>
-        </v-row>
-        <div>
-            <img src="../../src/assets/fish1.png">
-            <img src="../../src/assets/fish-2.png">
-            <img src="../../src/assets/fish-3.png">
+    <div class="clearfix home">
+        <div class="seaweed-right">
+            <img class="right-seaweed" src="../assets/seaweed-right.png" />
         </div>
-    </v-container>
+        <div class="seaweed-left">
+            <img class="left-seaweed" src="../assets/seaweed-left.png" />
+        </div>
+        <v-container class="sponsor-info">
+            <app-logo></app-logo>
+            <v-row>
+                <v-col mt-5 xs12 sm12 md12 offset-lg4 lg4>
+                    <h1>{{title}}</h1>
+                </v-col>
+            </v-row>
+            <div>
+                <img src="../../src/assets/fish1.png">
+                <img src="../../src/assets/fish-2.png">
+                <img src="../../src/assets/fish-3.png">
+            </div>
+        </v-container>
+    </div>
 </template>
 
 <script>
@@ -85,21 +29,7 @@
         name: 'sponsors-info',
         data () {
             return {
-                title: 'VTHacks payment',
-                paymentData: {
-                    company: '',
-                    email: '',
-                    cardNumber: '',
-                    cardExp: '',
-                    cardCode: '',
-                    amount: '', // for now it will be a NUMBER if we need decimals maybe change to string?
-                    paymentFor: ''
-                }
-            }
-        },
-        methods: {
-            modal (id) {
-                this.$vuetify.bus.pub(`modal:close:${id}`)
+                title: 'VTHacks Sponsors 2017'
             }
         },
         components: {
@@ -128,7 +58,26 @@
     }
     .sponsor-info {
         text-align: center;
-        height: calc(100vh - 4em);
+        padding-top: 10px;
+    }
+    .seaweed-right {
+        width: 30vh;
+        float: right;
+    }
+    img.right-seaweed {
+        position: fixed;
+        height: 100vh;
+        width: 40vh;
+    }
+    img.left-seaweed {
+        position: fixed;
+        height: 100vh;
+        width: 30vh;
+    }
+    @media screen and (max-width: 1180px) {
+        .seaweed-right, .seaweed-left{
+            display: none;
+        }
     }
 </style>
 

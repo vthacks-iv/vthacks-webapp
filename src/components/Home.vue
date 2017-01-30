@@ -17,7 +17,9 @@
                     <div id="vthacksDate">
                         February 12th, 2017
                     </div>
-                    <v-btn :ripple="{class: 'teal--text'}" class="vt-submit-btn" round>Register</v-btn>
+                    <router-link style='text-decoration: none' to='/register'>
+                        <v-btn :ripple="{class: 'teal--text'}" class="vt-submit-btn" round>Register</v-btn>
+                    </router-link>
                 </v-col>
             </v-row>
         </v-container>
@@ -45,7 +47,6 @@
     h1, h2 {
         font-weight: normal;
     }
-
     ul {
         list-style-type: none;
         padding: 0;
@@ -75,8 +76,6 @@
         width: 30vh;
         float: right;
     }
-    .seaweed-left {
-    }
     img.right-seaweed {
         position: fixed;
         height: 100vh;
@@ -88,21 +87,13 @@
         width: 30vh;
     }
     @media screen and (max-width: 1180px) {
-        .main-title {
-            font-size: 8rem;
-        }
         .seaweed-right, .seaweed-left{
             display: none;
-        }
-        .home-content {
         }
     }
     @media (min-width: 0px) and (max-width: 740px) {
         .home-title {
             font-size: 10rem;
-        }
-        .home-content {
-            margin: 12vh 0 0 0;
         }
         #vthacksTitle {
             margin: 0;
@@ -125,8 +116,6 @@
         #vthacksDate {
             margin: 0 0 10px 0;
         }
-    }
-    @media (width: 412px) {
     }
     .home-title {
         font-size: 8vh;

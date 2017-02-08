@@ -15,7 +15,7 @@
                         <p id="vthacksNum">IV</p>
                     </div>
                     <div id="vthacksDate">
-                        February 12th, 2017
+                        February 17th, 2017
                     </div>
                     <router-link style='text-decoration: none' to='/register'>
                         <v-btn :ripple="{class: 'teal--text'}" class="vt-submit-btn" round>Register</v-btn>

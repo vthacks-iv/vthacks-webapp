@@ -19,7 +19,7 @@
 
 <script>
     import Nav from './components/Nav'
-    import { firebaseAuth, database } from './firebase_config'
+    // import { firebaseAuth, database } from './firebase_config'
 
     export default {
         name: 'app',
@@ -38,26 +38,26 @@
         },
         mounted () {
             this.$vuetify.init()
-        },
-        created () {
-            firebaseAuth.onAuthStateChanged(user => {
-                if (user) {
-                    this.userInfo = true
-                    database
-                        .ref('users')
-                        .child(user.uid)
-                        .once('value')
-                        .then(snapshot => {
-                            const dbUser = snapshot.val()
-                            dbUser.uid = user.uid
-                            this.$store.dispatch('setUser', dbUser)
-                        })
-                }
-            },
-            (err) => {
-                console.log(err)
-            })
         }
+        // created () {
+        //     firebaseAuth.onAuthStateChanged(user => {
+        //         if (user) {
+        //             this.userInfo = true
+        //             database
+        //                 .ref('users')
+        //                 .child(user.uid)
+        //                 .once('value')
+        //                 .then(snapshot => {
+        //                     const dbUser = snapshot.val()
+        //                     dbUser.uid = user.uid
+        //                     this.$store.dispatch('setUser', dbUser)
+        //                 })
+        //         }
+        //     },
+        //     (err) => {
+        //         console.log(err)
+        //     })
+        // }
     }
 </script>
 

@@ -84,6 +84,7 @@
         font-weight: 400;
     }
     .navbar__title {
+        margin: 0%;
         color: #03735b;
         font-size: 3rem;
         font-weight: 300;
